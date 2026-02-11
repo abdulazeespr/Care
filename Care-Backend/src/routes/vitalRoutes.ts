@@ -6,13 +6,13 @@ import { createVitalSchema } from '../validators/vitalValidator';
 
 const router = Router();
 
-// GET /api/parents/:parentId/vitals — all vitals sorted desc
-router.get('/', getVitals);
+// GET /api/vitals/<parentId> — all vitals sorted desc
+router.get('/:parentId', getVitals);
 
-// GET /api/parents/:parentId/vitals/latest — most recent vital
-router.get('/latest', getLatestVital);
+// GET /api/vitals/latest — most recent vital
+router.get('/latest/:parentId', getLatestVital);
 
-// POST /api/parents/:parentId/vitals — add vital (Zod validated)
-router.post('/', validate(createVitalSchema), createVital);
+// POST /api/vitals — add vital (Zod validated)
+router.post('/:parentId', validate(createVitalSchema), createVital);
 
 export default router;

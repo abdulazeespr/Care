@@ -13,7 +13,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api/parents', parentRoutes);
-app.use('/api/parents/:parentId/vitals', vitalRoutes);
+app.use('/api/vitals', vitalRoutes);
 
 // Health check
 app.get('/', (_req, res) => {
