@@ -14,7 +14,7 @@ export default function SearchBar({ value, onChange }: SearchBarProps) {
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 className="w-full bg-slate-800/40 border border-slate-700/50 rounded-xl py-3.5 pl-12 pr-12 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all text-sm placeholder:text-slate-500 text-slate-100"
-                placeholder="Search by patient name, ID, or room number..."
+                placeholder="Search by patient name"
             />
             <div className="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2">
                 {value && (
