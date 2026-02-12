@@ -1,18 +1,16 @@
-
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import DashboardPage from "./pages/DashboardPage";
 
 function App() {
-
-
   return (
-      <div>
-        <h1 className='text-3xl font-bold underline'>Care</h1>
-        <p>Care is a platform for managing the health of your loved ones.</p>
-        <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
-          Get Started
-        </button>
-      </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/parents/:id" element={<DashboardPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
